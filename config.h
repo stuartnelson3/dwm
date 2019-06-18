@@ -15,11 +15,13 @@ static const char col_cyan[]        = "#005577";
 static const char col_tronfg[]      = "#aacfd1";
 static const char col_tronbg[]      = "#05080d";
 static const char col_trongray[]    = "#262828";
+static const char col_termitefg[]      = "#ebdbb2";
+static const char col_termitebg[]      = "#282828";
 
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_tronbg, col_trongray },
-	[SchemeSel]  = { col_gray4, col_tronbg,  col_tronfg  },
+	[SchemeNorm] = { col_gray3, col_termitebg, col_termitebg },
+	[SchemeSel]  = { col_gray4, col_termitebg,  col_termitefg  },
 };
 
 /* tagging */
@@ -60,8 +62,8 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_tronbg, "-nf", col_trongray, "-sb", col_tronbg, "-sf", col_tronfg, NULL };
-static const char *termcmd[]  = { "alacritty", NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_termitebg, "-nf", col_tronfg, "-sb", col_termitebg, "-sf", col_termitefg, NULL };
+static const char *termcmd[]  = { "termite", NULL };
 #define AUDIOTOGGLECMD  "/home/stuart/dotfiles/bin/wm/audio-toggle"
 #define AUDIOSETCMD  "/home/stuart/dotfiles/bin/wm/audio-set"
 static const char *mutecmd[] = { AUDIOTOGGLECMD, NULL };
